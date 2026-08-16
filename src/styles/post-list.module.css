@@ -1,0 +1,13 @@
+.postArticle {
+  margin-bottom: 1.25rem;
+}
+
+.postTitle {
+  margin: 0;
+}
+
+.postDate {
+  margin: 0.15rem 0 0;
+  color: #767676;
+  font-size: 0.9rem;
+}
