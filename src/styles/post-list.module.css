@@ -1,5 +1,30 @@
+.postList {
+  margin-top: 1.5rem;
+}
+
 .postArticle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
   margin-bottom: 1.25rem;
+}
+
+.postIcon {
+  flex: 0 0 auto;
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--icon-color, #378ADD);
+}
+
+.postIcon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.postText {
+  flex: 1 1 auto;
 }
 
 .postTitle {

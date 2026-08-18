@@ -1,0 +1,30 @@
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: #f0f0f0;
+  color: #333;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.pill:hover {
+  background: #e2e2e2;
+}
+
+.categoryPill {
+  composes: pill;
+  background: #e5f0fd;
+  color: #1a5bb8;
+}
+
+.categoryPill:hover {
+  background: #d3e6fb;
+}

@@ -3,13 +3,16 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
   heading,
+  headingRow,
+  headingIcon,
+  pageMetaText,
   navLinks,
   navLinkItem,
   navLinkText,
   siteTitle,
 } from './layout.module.css'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, titleIcon, pageMeta, children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -38,7 +41,16 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main>
-        <h1 className={heading}>{pageTitle}</h1>
+        <div className={headingRow}>
+          <h1 className={heading}>{pageTitle}</h1>
+          {titleIcon && (
+            <span
+              className={headingIcon}
+              dangerouslySetInnerHTML={{ __html: titleIcon }}
+            />
+          )}
+        </div>
+        {pageMeta && <p className={pageMetaText}>{pageMeta}</p>}
         {children}
       </main>
     </div>

@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Axims First Gatsby Site`,
+    title: `axims.id.au`,
     description: `A blog about whatever Axims feels like writing about.`,
     siteUrl: `https://axims.id.au`,
   },
@@ -61,7 +61,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Axims First Gatsby Site RSS Feed",
+            title: "axims.id.au RSS Feed",
           },
         ],
       },

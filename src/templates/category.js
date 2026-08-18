@@ -1,15 +1,14 @@
-// Step 1: Import React
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { postArticle, postIcon, postText, postTitle, postDate } from '../styles/post-list.module.css'
+import { postList, postArticle, postIcon, postText, postTitle, postDate } from '../styles/post-list.module.css'
 
-// Step 2: Define your component
-const IndexPage = ({ data }) => {
+const CategoryPage = ({ pageContext, data }) => {
+  const { category } = pageContext
   return (
-    <Layout pageTitle="Blog">
-      <p>I'm an engineer passionate about open-source solutions, homelab and applying engineering design considerations when managing our home.</p>
+    <Layout pageTitle={`Category: ${category}`}>
+      <div className={postList}>
       {
         data.allMdx.nodes.map((node) => (
           <article key={node.id} className={postArticle}>
@@ -32,13 +31,17 @@ const IndexPage = ({ data }) => {
           </article>
         ))
       }
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
+  query ($category: String) {
+    allMdx(
+      filter: { frontmatter: { category: { eq: $category } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -54,8 +57,8 @@ export const query = graphql`
   }
 `
 
-// You'll learn about this in the next task, just copy it for now
-export const Head = () => <Seo title="Blog" />
+export const Head = ({ pageContext }) => (
+  <Seo title={`Category: ${pageContext.category}`} />
+)
 
-// Step 3: Export your component
-export default IndexPage
+export default CategoryPage
