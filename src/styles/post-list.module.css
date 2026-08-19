@@ -14,13 +14,17 @@
   display: block;
   width: 2.25rem;
   height: 2.25rem;
-  color: var(--icon-color, #378ADD);
+  color: var(--icon-color, var(--accent));
 }
 
 .postIcon svg {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.postIcon svg path {
+  fill: currentColor;
 }
 
 .postText {
@@ -33,6 +37,6 @@
 
 .postDate {
   margin: 0.15rem 0 0;
-  color: #767676;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }

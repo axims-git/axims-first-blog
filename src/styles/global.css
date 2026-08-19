@@ -1,0 +1,49 @@
+/*
+ * Color tokens for the site.
+ * Every value here matches what was previously hardcoded in individual
+ * CSS modules — this file introduces no visual change on its own.
+ * A future [data-theme="dark"] block will override these for dark mode.
+ */
+:root {
+  --bg: #ffffff;
+  --text-body: #000000;
+  --text-heading: rebeccapurple;
+  --text-muted: #767676;
+  --text-site-title: gray;
+  --accent: #378ADD;
+
+  --pill-bg: #f0f0f0;
+  --pill-text: #333333;
+  --pill-bg-hover: #e2e2e2;
+
+  --category-pill-bg: #e5f0fd;
+  --category-pill-text: #1a5bb8;
+  --category-pill-bg-hover: #d3e6fb;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-body);
+}
+
+/*
+ * Dark theme overrides, applied when <html data-theme="dark">.
+ * Inspired by calvin.me — dark charcoal background, light text,
+ * and their #3F80FF accent blue.
+ */
+[data-theme="dark"] {
+  --bg: #16181d;
+  --text-body: #e8e8e8;
+  --text-heading: #c299ff;
+  --text-muted: #9a9a9a;
+  --text-site-title: #b0b0b0;
+  --accent: #3f80ff;
+
+  --pill-bg: #262a33;
+  --pill-text: #d8d8d8;
+  --pill-bg-hover: #323744;
+
+  --category-pill-bg: #1b2c4d;
+  --category-pill-text: #7fb0ff;
+  --category-pill-bg-hover: #24365c;
+}

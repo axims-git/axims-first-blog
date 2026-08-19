@@ -13,6 +13,7 @@ const BlogPost = ({ data, children }) => {
           <Layout
             pageTitle={data.mdx.frontmatter.title}
             titleIcon={data.mdx.frontmatter.thumbnail?.svgContent}
+            titleIconColor={data.mdx.frontmatter.icon_color}
             pageMeta={data.mdx.frontmatter.date}
           >
             {(category || (tags && tags.length > 0)) && (
@@ -68,6 +69,7 @@ export const query = graphql`
         thumbnail {
           svgContent
         }
+        icon_color
         category
         tags
       }

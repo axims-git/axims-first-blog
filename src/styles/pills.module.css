@@ -9,22 +9,22 @@
   display: inline-block;
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  background: #f0f0f0;
-  color: #333;
+  background: var(--pill-bg);
+  color: var(--pill-text);
   font-size: 0.85rem;
   text-decoration: none;
 }
 
 .pill:hover {
-  background: #e2e2e2;
+  background: var(--pill-bg-hover);
 }
 
 .categoryPill {
   composes: pill;
-  background: #e5f0fd;
-  color: #1a5bb8;
+  background: var(--category-pill-bg);
+  color: var(--category-pill-text);
 }
 
 .categoryPill:hover {
-  background: #d3e6fb;
+  background: var(--category-pill-bg-hover);
 }

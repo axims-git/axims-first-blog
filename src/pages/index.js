@@ -16,6 +16,7 @@ const IndexPage = ({ data }) => {
             {node.frontmatter.thumbnail && (
               <span
                 className={postIcon}
+                style={node.frontmatter.icon_color ? { '--icon-color': node.frontmatter.icon_color } : undefined}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.thumbnail.svgContent,
                 }}
@@ -47,6 +48,7 @@ export const query = graphql`
           thumbnail {
             svgContent
           }
+          icon_color
         }
         id
       }
