@@ -528,6 +528,16 @@ paramMapping.angle = paramMapping.slant;
 paramMapping.colors = paramMapping.stripeColors;
 
 export default (urlParams) => {
+	// Site defaults — applied when the URL doesn't specify these params.
+	// Any of these can still be overridden by visiting with an explicit
+	// query string, e.g. /matrix/?version=classic
+	urlParams = {
+		numColumns: "100",
+		fallSpeed: "0.1",
+		version: "operator",
+		...urlParams,
+	};
+
 	const validParams = Object.fromEntries(
 		Object.entries(urlParams)
 			.filter(([key]) => key in paramMapping)
