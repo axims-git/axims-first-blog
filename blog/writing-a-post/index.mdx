@@ -1,0 +1,142 @@
+---
+title: "Writing a Post: Markdown & MDX Cheatsheet"
+date: "2026-08-20"
+slug: "writing-a-post"
+hero_image: "./hero.jpg"
+hero_image_alt: "A white pitbull wearing big googly-eye glasses"
+hero_image_credit_text: "Jane Almon"
+hero_image_credit_link: "https://unsplash.com/photos/7rriIaBH6JY"
+thumbnail: "./thumbnail.svg"
+icon_color: "#378ADD"
+category: "Meta"
+tags: ["markdown", "mdx", "guide"]
+---
+
+import { StaticImage } from 'gatsby-plugin-image'
+
+This post is both a real, publishable example **and** a reference for the
+markdown and MDX features available when writing posts for this blog. Delete
+it once you don't need it anymore, or keep it around as a cheatsheet.
+
+## Text formatting
+
+You can write **bold text**, *italic text*, ***bold italic***, and
+~~strikethrough~~ isn't supported by default — more on that at the bottom.
+`Inline code` uses single backticks, handy for referencing a `filename.js`
+or a short `command --flag` inline with a sentence.
+
+## Headings and sections
+
+This post itself is broken into `##` (h2) sections, and this one has a `###`
+(h3) subsection right below it — the same pattern Calvin's site uses to
+structure longer technical posts.
+
+### A subsection example
+
+Headings give readers something to visually scan, and later we could add a
+table-of-contents component that reads these headings automatically — not
+set up yet, but straightforward to add if you want it.
+
+## Lists
+
+Unordered:
+
+- First point
+- Second point
+  - A nested point
+  - Another nested point
+- Third point
+
+Ordered:
+
+1. Clone the repo
+2. Install dependencies
+3. Run `gatsby develop`
+
+## Links
+
+Both external links, like to [Gatsby's own docs](https://www.gatsbyjs.com/docs/),
+and internal links to other posts on this blog, like
+[My First Post](/my-first-post), work with standard markdown link syntax.
+
+## Blockquotes
+
+> A blockquote is useful for pulling out a quoted passage, a warning, or
+> a side note you want visually separated from the main text.
+
+## Code blocks
+
+Fenced code blocks preserve formatting and support a language tag, which is
+useful for readability even without color syntax highlighting (see the note
+at the bottom of this post):
+
+```js
+function greet(name) {
+  return `Hello, ${name}!`
+}
+
+console.log(greet("world"))
+```
+
+Command output works well here too, similar to how Calvin shows `iperf3`
+results on his networking posts:
+
+```shell-session
+$ npm run build
+
+success open and validate gatsby-configs - 0.045s
+success load plugins - 0.612s
+success onPreInit - 0.003s
+```
+
+## Images
+
+Local images embedded in the body of a post need the `StaticImage`
+component rather than plain markdown `![]()` syntax — that's a limitation
+of this version of `gatsby-plugin-mdx`, not something we've missed. Plain
+markdown image syntax only works reliably for full external URLs.
+
+```mdx
+import { StaticImage } from 'gatsby-plugin-image'
+
+<StaticImage
+  src="./example-photo.jpg"
+  alt="A descriptive, meaningful alt text"
+/>
+```
+
+Here's that same component actually rendered:
+
+<StaticImage
+  src="./example-photo.jpg"
+  alt="A white pitbull wearing big googly-eye glasses"
+/>
+
+## Horizontal rule
+
+Useful as a visual break between unrelated sections of a longer post.
+
+---
+
+## Frontmatter fields available
+
+Every post supports these fields at the top of the file, all optional
+except `title`, `date`, and `slug`:
+
+- `hero_image`, `hero_image_alt`, `hero_image_credit_text`, `hero_image_credit_link`
+- `thumbnail` — a `.svg` file sitting next to `index.mdx`
+- `icon_color` — any CSS color, overrides the theme's default accent for this post's icon
+- `category` — a single string, e.g. `"Home"`
+- `tags` — an array of strings, e.g. `["solar", "battery"]`
+
+## Not supported yet, without adding a plugin
+
+Two commonly-expected markdown features aren't enabled in this project by
+default:
+
+- **Syntax-highlighted code blocks** — the fenced blocks above render in
+  plain monospace, not color-coded by language
+- **Tables** (and other GitHub-flavored markdown like `~~strikethrough~~`) —
+  these need the `remark-gfm` plugin added to `gatsby-config.js`
+
+Both are quick to add if you want them — just ask.

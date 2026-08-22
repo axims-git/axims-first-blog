@@ -17,7 +17,24 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        mdxOptions: {
+          remarkPlugins: [require("remark-gfm").default],
+          rehypePlugins: [
+            [
+              require("rehype-prism-plus").default,
+              {
+                // Don't error on languages we haven't installed a
+                // grammar for — falls back to plain, unhighlighted text.
+                ignoreMissing: true,
+              },
+            ],
+          ],
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-plugin-feed",
