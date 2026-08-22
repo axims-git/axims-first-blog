@@ -1,6 +1,6 @@
 .container {
   margin: auto;
-  max-width: 500px;
+  max-width: 700px;
   font-family: sans-serif;
 }
 
@@ -50,9 +50,20 @@
 .nav-link-text {
   color: var(--text-body);
 }
+.site-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 3rem 0;
+}
 .site-title {
   font-size: 3rem;
   color: var(--text-site-title);
   font-weight: 700;
-  margin: 3rem 0;
+}
+.site-logo {
+  flex: 0 0 auto;
+  width: 3.5rem;
+  height: 3.5rem;
 }
