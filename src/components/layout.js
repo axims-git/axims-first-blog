@@ -8,7 +8,6 @@ import {
   headingRow,
   headingIcon,
   pageMetaText,
-  navRow,
   navLinks,
   navLinkItem,
   navLinkText,
@@ -39,23 +38,23 @@ const Layout = ({ pageTitle, titleIcon, titleIconColor, pageMeta, children }) =>
           placeholder="none"
         />
       </header>
-      <div className={navRow}>
-        <nav>
-          <ul className={navLinks}>
-            <li className={navLinkItem}>
-              <Link to="/" className={navLinkText}>
-                Home
-              </Link>
-            </li>
-            <li className={navLinkItem}>
-              <Link to="/about" className={navLinkText}>
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <ThemeToggle />
-      </div>
+      <nav>
+        <ul className={navLinks}>
+          <li className={navLinkItem}>
+            <Link to="/" className={navLinkText}>
+              Home
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link to="/about" className={navLinkText}>
+              About
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <ThemeToggle />
+          </li>
+        </ul>
+      </nav>
       <main>
         <div className={headingRow}>
           <h1 className={heading}>{pageTitle}</h1>

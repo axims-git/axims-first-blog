@@ -6,7 +6,15 @@
   display: flex;
   align-items: flex-start;
   gap: 0.9rem;
+  padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.postArticle:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .postIcon {

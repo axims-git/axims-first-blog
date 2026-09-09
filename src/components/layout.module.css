@@ -34,13 +34,9 @@
   color: var(--text-muted);
   font-size: 0.9rem;
 }
-.nav-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
   padding-left: 0;
 }

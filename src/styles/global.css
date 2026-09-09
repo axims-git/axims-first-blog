@@ -11,6 +11,7 @@
   --text-muted: #767676;
   --text-site-title: gray;
   --accent: #378ADD;
+  --border: #e5e5e5;
 
   --pill-bg: #f0f0f0;
   --pill-text: #333333;
@@ -38,6 +39,7 @@ body {
   --text-muted: #9a9a9a;
   --text-site-title: #b0b0b0;
   --accent: #3f80ff;
+  --border: #2a2d35;
 
   --pill-bg: #262a33;
   --pill-text: #d8d8d8;
