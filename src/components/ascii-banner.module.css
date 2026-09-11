@@ -1,0 +1,46 @@
+.banner {
+  /* Matches the site's dark-mode --bg value exactly, but stays fixed
+     regardless of the theme toggle — the box is meant to look like a
+     dark terminal even when the rest of the page is in light mode. */
+  background: #16181d;
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.asciiArt {
+  margin: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.15;
+  color: #8be9fd;
+  text-align: center;
+  white-space: pre;
+}
+
+.subtitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.dividerLine {
+  flex: 1 1 auto;
+  border-top: 1px dotted #4a4f5c;
+}
+
+.subtitleText {
+  flex: 0 0 auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #b8bcc4;
+}
+
+@media (max-width: 480px) {
+  .asciiArt {
+    font-size: 0.6rem;
+  }
+}

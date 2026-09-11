@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import ThemeToggle from './theme-toggle'
+import AsciiBanner from './ascii-banner'
 import {
   container,
   heading,
@@ -12,8 +12,6 @@ import {
   navLinkItem,
   navLinkText,
   siteTitleRow,
-  siteTitle,
-  siteLogo,
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, titleIcon, titleIconColor, pageMeta, children }) => {
@@ -30,13 +28,7 @@ const Layout = ({ pageTitle, titleIcon, titleIconColor, pageMeta, children }) =>
   return (
     <div className={container}>
       <header className={siteTitleRow}>
-        <span className={siteTitle}>{data.site.siteMetadata.title}</span>
-        <StaticImage
-          src="../images/axims-logo.png"
-          alt=""
-          className={siteLogo}
-          placeholder="none"
-        />
+        <AsciiBanner />
       </header>
       <nav>
         <ul className={navLinks}>
